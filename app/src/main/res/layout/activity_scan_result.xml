@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ScanResultActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Heading -->
+            <TextView
+                android:id="@+id/tvResultHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_complete_title"
+                android:textAppearance="@style/TextAppearance.Vigilant.Heading"
+                android:textSize="24sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Score Visual -->
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="24dp">
+                
+                <!-- Progress Indicator -->
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progressRisk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:indicatorSize="200dp"
+                    app:trackThickness="2dp"
+                    app:trackColor="@color/surface_variant"
+                    app:indicatorColor="#000000"
+                    app:trackCornerRadius="1dp"
+                    android:progress="65"
+                    android:visibility="visible"/>
+                 
+                 <!-- Circle Outline for decoration if needed -->
+                 <View
+                    android:id="@+id/viewRiskCircleBg"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_circle_outline_black"/>
+                    
+                 <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:orientation="vertical"
+                     android:gravity="center">
+                     
+                     <TextView
+                        android:id="@+id/tvRiskScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="65"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                     
+                     <TextView
+                        android:id="@+id/tvRiskScoreLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/risk_score_label"
+                        android:textSize="14sp"
+                        android:textColor="@color/vigilant_text_secondary"/>
+                 </LinearLayout>
+            </FrameLayout>
+
+            <!-- Risk Status -->
+            <TextView
+                android:id="@+id/tvRiskStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/risk_level_high"
+                android:textColor="@color/vigilant_orange" 
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvRiskDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/risk_desc"
+                android:textColor="@color/vigilant_text_secondary"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginBottom="40dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+            
+            <!-- Stats Row -->
+            <LinearLayout
+                android:id="@+id/llStatsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+                
+                <!-- Card 1: Risk Apps -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRiskApps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_marginEnd="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/ivStats1Icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_shield_alert_outline_red"
+                            android:layout_marginBottom="12dp"/>
+                        
+                        <TextView
+                            android:id="@+id/tvStats1Count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/vigilant_red"/> 
+                        
+                        <TextView
+                            android:id="@+id/tvStats1Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/high_risk_apps_label"
+                            android:textSize="14sp"
+                            android:textColor="@color/vigilant_text_secondary"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 2: Warnings -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardWarnings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_marginStart="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/ivStats2Icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_warning_outline_orange"
+                            android:layout_marginBottom="12dp"/>
+                        
+                        <TextView
+                            android:id="@+id/tvStats2Count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/vigilant_orange"/> 
+                        
+                        <TextView
+                            android:id="@+id/tvStats2Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/warnings_label"
+                            android:textSize="14sp"
+                            android:textColor="@color/vigilant_text_secondary"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Scanned Info -->
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_marginBottom="24dp"> <!-- Reduced bottom margin to create space for button -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical">
+                        
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_check_circle_green"
+                            android:layout_marginEnd="16dp"/>
+                        
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            
+                             <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/apps_scanned_count"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                             
+                             <TextView
+                                android:id="@+id/tvScannedSubtext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/db_update_time"
+                                android:textSize="14sp"
+                                android:textColor="@color/vigilant_success_green"/>
+                        </LinearLayout>
+                    </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            
+            <!-- Recommendation Note (Optional, used in safe mode) -->
+            <LinearLayout
+                android:id="@+id/llRecommendNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_icon"
+                android:backgroundTint="#E8F5E9"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:visibility="gone">
+                
+                <TextView
+                    android:id="@+id/tvRecommendNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recommend_scans_note"
+                    android:textColor="#2E7D32"
+                    android:textSize="14sp"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/go_dashboard_action"
+                android:textAllCaps="false"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/vigilant_blue"
+                android:layout_marginBottom="16dp"/>
+            
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDetails"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/view_details_action"
+                android:textAllCaps="false"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="@color/vigilant_blue"
+                app:strokeColor="@color/vigilant_blue"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Debug / Demo Links (Can be removed or kept for testing) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone"> 
+                
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDemoLow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Demo Low"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:textColor="@color/vigilant_text_secondary"/>
+                    
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDemoMed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Demo Med"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:textColor="@color/vigilant_text_secondary"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

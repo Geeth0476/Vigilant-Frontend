@@ -1,0 +1,132 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Vigilant" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/vigilant_blue</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimation.Vigilant</item>
+    </style>
+
+    <style name="WindowAnimation.Vigilant" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="ShapeAppearance.Vigilant.Button.Pill" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.Vigilant.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Widget.Vigilant.Button" parent="Widget.Material3.Button">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Vigilant.Button.Pill</item>
+        <item name="backgroundTint">@color/vigilant_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+    </style>
+
+    <style name="Widget.Vigilant.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Vigilant.Button.Pill</item>
+        <item name="strokeColor">@color/vigilant_blue</item>
+        <item name="android:textColor">@color/vigilant_blue</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Heading" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/vigilant_text_primary</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineHeight">32sp</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/vigilant_text_secondary</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="KeypadButtonStyle">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/bg_keypad_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/vigilant_text_primary</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="Theme.Vigilant" parent="Base.Theme.Vigilant" />
+    <style name="TextAppearance.Vigilant.Display" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/vigilant_text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineHeight">40sp</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/vigilant_text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Body.Large" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/vigilant_text_primary</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Body.Small" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+        <item name="listPreferredItemPaddingStart">16dp</item>
+        <item name="android:textColor">@color/vigilant_text_secondary</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/vigilant_text_secondary</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Vigilant.Overline" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/vigilant_text_secondary</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+    
+    <style name="TextAppearance.Vigilant.Label" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/vigilant_text_secondary</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    
+    <style name="TextAppearance.Vigilant.Label.Small" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/vigilant_text_secondary</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Theme.Vigilant.TimePicker" parent="Theme.Material3.Light.Dialog">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="android:numbersTextColor">@color/black</item>
+        <item name="android:amPmTextColor">@color/black</item>
+        <item name="materialTimePickerTheme">@style/Theme.Vigilant.TimePicker</item>
+    </style>
+</resources>

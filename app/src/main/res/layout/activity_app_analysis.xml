@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AppAnalysisActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="@string/app_analysis_title"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:navigationIcon="@drawable/ic_arrow_back_black"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- App Header -->
+            <FrameLayout
+                android:id="@+id/flAppIconContainer"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_square_soft_red"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp">
+                
+                <ImageView
+                    android:id="@+id/ivAppIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_mic_red"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Voice Recorder"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvPackageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scanned_app_version"
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Status Pill -->
+            <LinearLayout
+                android:id="@+id/llStatusPill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_nav_pill_active"
+                android:backgroundTint="#FFEBEE"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:gravity="center"
+                android:layout_marginBottom="32dp">
+                
+                <ImageView
+                    android:id="@+id/ivStatusIcon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_shield_alert_outline_red"
+                    android:layout_marginEnd="8dp"/>
+                
+                <TextView
+                    android:id="@+id/tvStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_critical"
+                    android:textStyle="bold"
+                    android:textColor="@color/vigilant_red"/>
+            </LinearLayout>
+
+            <!-- Risk Score Ring -->
+            <FrameLayout
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp">
+                
+                <View
+                    android:id="@+id/vRiskRing"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_circle_outline_red"/>
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    
+                    <TextView
+                        android:id="@+id/tvRiskScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="85"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/risk_score_label"
+                        android:textSize="12sp"
+                        android:textColor="@color/vigilant_text_secondary"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvRiskTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/risk_critical_title"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/vigilant_red"
+                android:layout_marginBottom="4dp"/>
+                
+            <TextView
+                android:id="@+id/tvRiskDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/risk_critical_desc"
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/tvPrivacyThreat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/msg_privacy_threat"
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/risk_critical_desc"
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Detected Behaviors -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/behaviors_title"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                android:gravity="start"/>
+            
+            <!-- Dynamic Behavior List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRiskFactors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_behavior_card_1"/>
+            
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp"/>
+
+            <!-- Actions -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVigilantAssistant"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_ask_assistant"
+                app:icon="@drawable/ic_bubble_chat"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/vigilant_blue"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:layout_marginBottom="16dp"
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewTimeline"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_timeline"
+                app:icon="@drawable/ic_clock_outline"
+                app:iconTint="@color/vigilant_blue"
+                app:iconGravity="textStart"
+                android:textColor="@color/vigilant_blue"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/vigilant_blue"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:layout_marginBottom="16dp"
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRevoke"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_revoke"
+                app:icon="@drawable/ic_shield_off"
+                app:iconTint="@color/white"
+                app:iconGravity="textStart"
+                android:backgroundTint="#26A69A"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:layout_marginBottom="16dp"
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUninstall"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_uninstall"
+                app:icon="@drawable/ic_trash"
+                app:iconTint="@color/white"
+                app:iconGravity="textStart"
+                android:backgroundTint="@color/vigilant_red"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:layout_marginBottom="32dp"
+                android:textAllCaps="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_scanned_caption"
+                android:textSize="12sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

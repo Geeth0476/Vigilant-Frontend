@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".PermissionTimelineActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/timeline_title"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/timeline_subtitle"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:navigationIcon="@drawable/ic_arrow_back_black"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Context Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+                
+                <FrameLayout
+                    android:id="@+id/flTimelineAppIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_square_soft_red">
+                     <ImageView
+                        android:id="@+id/ivTimelineAppIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_mic_red"
+                        android:layout_gravity="center"/>
+                </FrameLayout>
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+                    
+                    <TextView
+                        android:id="@+id/tvTimelineAppName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_voice_recorder"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="4dp">
+                        
+                         <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_nav_pill_active"
+                            android:backgroundTint="#FFEBEE"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:gravity="center"
+                            android:layout_marginEnd="8dp">
+
+                            <TextView
+                                 android:id="@+id/tvTimelineRisk"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/status_critical"
+                                 android:textSize="10sp"
+                                 android:textStyle="bold"
+                                 android:textColor="@color/vigilant_red"/>
+                        </LinearLayout>
+                        
+                        <TextView
+                            android:id="@+id/tvTimelineLastScan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last scan: Today, 10:42 AM"
+                            android:textSize="12sp"
+                            android:textColor="@color/vigilant_text_secondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Timeline -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                
+                <!-- Vertical Line -->
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/vigilant_stroke"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_alignTop="@+id/list_container"
+                    android:layout_alignBottom="@+id/list_container"/>
+                 <!-- Simplified line approach: actually alignment is safer if I manually draw lines in items or use a recyclerview.
+                      For static XML, I'll just use a LinearLayout container and put margin for the line. 
+                      Better to have line in background or distinct column. -->
+                
+                <LinearLayout
+                    android:id="@+id/list_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTimeline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:layoutAnimation="@anim/layout_animation_fall_down"
+                        tools:listitem="@layout/item_timeline_event_generic"
+                        tools:itemCount="3"/>
+                        
+                    <include
+                        android:id="@+id/layoutEmptyState"
+                        layout="@layout/layout_empty_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+                        
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Legend -->
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 app:cardCornerRadius="12dp"
+                 app:strokeColor="#EEE"
+                 app:strokeWidth="1dp"
+                 app:cardElevation="0dp"
+                 app:cardBackgroundColor="#FAFAFA"
+                 android:layout_marginTop="24dp"
+                 android:layout_marginBottom="32dp">
+                 
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical"
+                     android:padding="16dp">
+                     
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         android:layout_marginBottom="8dp">
+                         <View
+                             android:layout_width="12dp"
+                             android:layout_height="12dp"
+                             android:background="@drawable/bg_circle_red"
+                             android:layout_gravity="center_vertical"
+                             android:layout_marginEnd="8dp"/>
+                          <!-- Need circular shape drawable for legend dots. -->
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/legend_red"
+                             android:textSize="12sp"
+                             android:textColor="@color/vigilant_text_secondary"/>
+                     </LinearLayout>
+                     
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+                         <View
+                             android:layout_width="12dp"
+                             android:layout_height="12dp"
+                             android:background="@drawable/bg_circle_amber"
+                             android:layout_gravity="center_vertical"
+                             android:layout_marginEnd="8dp"/>
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/legend_amber"
+                             android:textSize="12sp"
+                             android:textColor="@color/vigilant_text_secondary"/>
+                     </LinearLayout>
+                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Actions -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnManagePerms"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_manage_perms"
+                android:textColor="@color/vigilant_blue"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/vigilant_blue"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:layout_marginBottom="16dp"
+                android:textAllCaps="false"/>
+            
+            <TextView
+                android:id="@+id/btnDisableAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_disable_access"
+                android:textColor="@color/vigilant_red"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                 android:padding="12dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

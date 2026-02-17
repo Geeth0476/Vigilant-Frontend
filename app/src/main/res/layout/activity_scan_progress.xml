@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ScanProgressActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Top Shield Icon -->
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_shield_analytics_white" 
+                android:background="@drawable/bg_circle_primary"
+                android:padding="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvScanTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scanning Your Device"
+                android:textAppearance="@style/TextAppearance.Vigilant.Heading"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvScanDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vigilant is analyzing your device for spyware\nand suspicious behavior."
+                android:textAppearance="@style/TextAppearance.Vigilant.Body"
+                android:gravity="center"
+                android:layout_marginBottom="40dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+
+            <!-- Progress Indicator -->
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginBottom="40dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progressIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:indicatorSize="160dp"
+                    app:trackThickness="12dp"
+                    app:trackColor="@color/vigilant_light_blue_bg" 
+                    app:indicatorColor="@color/vigilant_blue"
+                    app:trackCornerRadius="6dp"
+                    android:progress="58"/>
+
+                <TextView
+                    android:id="@+id/tvProgressPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="58%"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+            </FrameLayout>
+
+            <!-- Status Cards Stack -->
+            
+            <!-- App Scan Card (Completed) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                     <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_rounded_icon">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_phone_android_blue"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/scan_apps_title"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"/>
+                         <TextView
+                            android:id="@+id/tvStatusApps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/scan_status_completed"
+                            android:textColor="@color/vigilant_success_green"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivStatusApps"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check_circle_green"
+                        android:visibility="visible"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Permissions Card (Analyzing) -->
+            <com.google.android.material.card.MaterialCardView
+                 android:id="@+id/cardPerms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                     <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_rounded_icon">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_shield_outline_blue"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/scan_perms_title"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"/>
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal"
+                             android:gravity="center_vertical">
+                             
+                             <TextView
+                                android:id="@+id/tvStatusPerms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/scan_status_analyzing"
+                                android:textColor="@color/vigilant_blue"
+                                android:textSize="14sp"/>
+                             
+                             <com.google.android.material.progressindicator.LinearProgressIndicator
+                                 android:id="@+id/progressPerms"
+                                 android:layout_width="60dp"
+                                 android:layout_height="wrap_content"
+                                 android:indeterminate="true"
+                                 app:indicatorColor="@color/vigilant_blue"
+                                 app:trackThickness="4dp"
+                                 app:trackCornerRadius="2dp"
+                                 android:layout_marginStart="8dp"/>
+                         </LinearLayout>
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivStatusPerms"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check_circle_green"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Background Activity Card (Queued) -->
+             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                     <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_rounded_icon">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_activity_pulse_blue"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/scan_bg_title"
+                            android:textStyle="bold"
+                            android:textColor="@color/vigilant_text_secondary" 
+                            android:textSize="16sp"/>
+                         <TextView
+                            android:id="@+id/tvStatusBg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/scan_status_queued"
+                            android:textColor="@color/vigilant_text_secondary"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+                    
+                    <ImageView
+                        android:id="@+id/ivStatusBg"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_hourglass_empty"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            
+            <!-- Spacer to push privacy card to bottom -->
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="1"/>
+
+
+            <!-- Privacy Reassurance -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_icon"
+                android:backgroundTint="@color/vigilant_light_blue_bg"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+                
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_shield_outline_blue"
+                    android:layout_marginEnd="12dp"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your data never leaves your device.\nThis scan runs securely on your phone."
+                    android:textColor="@color/vigilant_blue"
+                    android:textSize="12sp"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

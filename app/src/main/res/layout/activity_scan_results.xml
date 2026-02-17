@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ScanResultsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/scan_results_subtitle"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:menu="@menu/top_app_settings_menu"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Hero Ring -->
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp">
+                
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:indicatorSize="160dp"
+                    app:trackThickness="8dp"
+                    app:trackColor="@color/vigilant_amber_bg_light"
+                    app:indicatorColor="@color/vigilant_blue"
+                    app:trackCornerRadius="4dp"
+                    android:progress="100" />
+                    <!-- Full ring amber as per request example "Example: Amber" -->
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    
+                    <TextView
+                        android:id="@+id/tvHeroCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/results_threats_detected_label"
+                        android:textSize="12sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/vigilant_text_secondary"/>
+                </LinearLayout>
+            </FrameLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/results_summary_caption"
+                android:layout_gravity="center"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Summary Cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp">
+                
+                <!-- High Risk -->
+                <include layout="@layout/item_result_summary_high" 
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:layout_marginEnd="8dp"/>
+                
+                <!-- Med Risk -->
+                <include layout="@layout/item_result_summary_med"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:layout_marginEnd="8dp"/>
+                         
+                <!-- Safe -->
+                <include layout="@layout/item_result_summary_safe"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"/>
+            </LinearLayout>
+
+            <!-- Top Threats -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/results_top_threats_title"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <include layout="@layout/item_threat_card_1" />
+            <include layout="@layout/item_threat_card_2" />
+
+            <!-- Info Card -->
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 app:cardCornerRadius="16dp"
+                 app:strokeWidth="0dp"
+                 app:cardElevation="0dp"
+                 app:cardBackgroundColor="@color/vigilant_light_blue_bg"
+                 android:layout_marginTop="24dp"
+                 android:layout_marginBottom="24dp">
+                 
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:padding="16dp"
+                     android:gravity="center_vertical">
+                     
+                     <ImageView
+                         android:layout_width="24dp"
+                         android:layout_height="24dp"
+                         android:src="@drawable/ic_shield_check"
+                         app:tint="@color/vigilant_blue"
+                         android:layout_marginEnd="16dp" />
+                     
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/results_info_text"
+                         android:textSize="12sp"
+                         android:textColor="@color/vigilant_blue"/>
+                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReviewThreats"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_review_threats"
+                android:textAllCaps="false"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/vigilant_blue"
+                android:layout_marginBottom="8dp"/>
+            
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewApps"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/action_view_installed"
+                android:textAllCaps="false"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="@color/vigilant_text_secondary"
+                app:strokeColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled"
+        android:background="@color/white"
+        app:itemIconTint="@color/vigilant_nav_item_color"
+        app:itemTextColor="@color/vigilant_nav_text_color"
+        app:itemActiveIndicatorStyle="@null"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ManagePermissionsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="@string/manage_perms_title"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/timeline_subtitle"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:navigationIcon="@drawable/ic_arrow_back_black"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="100dp"> <!-- Space for footer -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Summary Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+                
+                <FrameLayout
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_square_soft_red">
+                     <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_mic_red"
+                        android:layout_gravity="center"/>
+                </FrameLayout>
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_voice_recorder"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pkg_voice_recorder"
+                        android:textSize="12sp"
+                        android:textColor="@color/vigilant_text_secondary"/>
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="4dp">
+                        
+                         <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_nav_pill_active"
+                            android:backgroundTint="#FFEBEE"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:gravity="center"
+                            android:layout_marginEnd="8dp">
+
+                            <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/status_critical"
+                                 android:textSize="10sp"
+                                 android:textStyle="bold"
+                                 android:textColor="@color/vigilant_red"/>
+                        </LinearLayout>
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last scan: Today, 10:42 AM"
+                            android:textSize="12sp"
+                            android:textColor="@color/vigilant_text_secondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Permissions List -->
+            <!-- Mic -->
+            <include layout="@layout/item_perm_card_mic" />
+            
+            <!-- Cam -->
+            <include layout="@layout/item_perm_card_cam" />
+            
+            <!-- Loc -->
+            <include layout="@layout/item_perm_card_loc" />
+            
+            <!-- Accessibility -->
+            <include layout="@layout/item_perm_card_acc" />
+            
+            <!-- Notifications -->
+            <include layout="@layout/item_perm_card_notif" />
+
+            <!-- Notice Card -->
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 app:cardCornerRadius="12dp"
+                 app:strokeWidth="0dp"
+                 app:cardElevation="0dp"
+                 app:cardBackgroundColor="@color/vigilant_light_blue_bg"
+                 android:layout_marginTop="24dp"
+                 android:layout_marginBottom="100dp"> 
+                 
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:padding="16dp"
+                     android:gravity="center_vertical">
+                     
+                     <ImageView
+                         android:layout_width="24dp"
+                         android:layout_height="24dp"
+                         android:src="@drawable/ic_scan_blue"
+                         app:tint="@color/vigilant_blue"
+                         android:layout_marginEnd="16dp" />
+                     
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/notice_desc"
+                         android:textSize="12sp"
+                         android:textColor="@color/vigilant_blue"/>
+                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:padding="16dp"
+        app:elevation="16dp">
+        <!-- Adding elevation and bg to act as sticky footer visually -->
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOpenSettings"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/action_open_settings"
+            android:textColor="@color/vigilant_red"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/vigilant_red"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+            android:layout_marginBottom="8dp"
+            android:textAllCaps="false"/>
+            
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRescan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_rescan"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/vigilant_blue"
+            android:textAllCaps="false"/>
+            
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

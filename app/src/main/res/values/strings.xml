@@ -1,0 +1,589 @@
+<resources>
+    <string name="app_name">Vigilant</string>
+    <string name="welcome_title">Welcome to Vigilant</string>
+    <string name="welcome_desc">Vigilant detects spyware and privacy-invasive apps using advanced behavior-based analysis to keep you safe.</string>
+    <string name="create_account">Create Account</string>
+    <string name="login">Login</string>
+    <string name="action_login_link">" Login"</string>
+    <string name="action_create_one">" Create one"</string>
+    <string name="hint_password_dots">........</string>
+    <string name="action_quick_scan">Quick Scan</string>
+    <string name="action_deep_scan">Deep Scan</string>
+    <string name="suspicious_app_name">Suspicious App</string>
+    <string name="high_risk_detected">High Risk Detected</string>
+    <string name="hero_score_example">65</string>
+    <string name="continue_guest">Continue as Guest</string>
+    <string name="powered_by">Powered by <font color="#3F51B5"><b>SIMATS Engineering</b></font></string>
+
+    <!-- Create Account Screen -->
+    <string name="join_vigilant">Join Vigilant</string>
+    <string name="create_account_desc">Create an account to start protecting your digital privacy.</string>
+    <string name="full_name_label">Full Name</string>
+    <string name="full_name_hint">John Doe</string>
+    <string name="email_phone_label">Email or Phone</string>
+    <string name="email_phone_hint">john@example.com</string>
+    <string name="password_label">Password</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="terms_checkbox">I accept the Privacy Policy and Terms of Service</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="create_account_title">Create Account</string>
+
+    <!-- Success Screen -->
+    <string name="success_title">Account Created Successfully</string>
+    <string name="success_desc">Your account is ready. Let\'s secure your device by setting up additional protection layers.</string>
+    <string name="continue_action">Continue</string>
+
+    <!-- Login Screen -->
+    <string name="login_title_screen">Login</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_desc_text">Sign in to access your security dashboard.</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="create_one">Create one</string>
+
+    <!-- Forgot Password Screen -->
+    <string name="reset_password_title">Reset Password</string>
+    <string name="forgot_password_heading">Forgot Password?</string>
+    <string name="forgot_password_desc">Enter your email or phone number and we\'ll send you a link to reset your password.</string>
+    <string name="send_reset_link">Send Reset Link</string>
+
+    <!-- Guest Mode Screen -->
+    <string name="guest_mode_title">Guest Mode</string>
+    <string name="guest_mode_heading">Guest Mode Limitations</string>
+    <string name="guest_mode_desc">You can use Vigilant without an account, but some features will be limited to protect community integrity.</string>
+    <string name="what_you_can_do">What you can do</string>
+    <string name="guest_feature_1">Scan your device for threats</string>
+    <string name="guest_feature_2">View risk reports</string>
+    <string name="guest_feature_3">Access removal guides</string>
+    <string name="what_you_cant_do">What you can\'t do</string>
+    <string name="guest_limit_1">Post to Community Hub</string>
+    <string name="guest_limit_2">Sync data across devices</string>
+    <string name="guest_limit_3">Save long-term history</string>
+    <string name="continue_guest_action">Continue as Guest</string>
+    <string name="create_account_instead">Create Account Instead</string>
+
+    <!-- Secure Access Screen -->
+    <string name="secure_access_title">Secure Access</string>
+    <string name="create_pin_heading">Create App PIN</string>
+    <string name="create_pin_desc">Protect access to Vigilant in sensitive situations.</string>
+    <string name="confirm_pin_action">Confirm PIN</string>
+
+    <!-- Biometric Setup Screen -->
+    <string name="biometric_title">Biometric Access</string>
+    <string name="biometric_heading">Enable Biometric Unlock</string>
+    <string name="biometric_desc">Use your fingerprint or face unlock for quick and secure access to the app.</string>
+    <string name="enable_biometrics_action">Enable Biometrics</string>
+    <string name="skip_action">Skip for now</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_title">System Permissions</string>
+    <string name="permissions_desc">Vigilant needs limited system access to effectively detect spyware behavior on your device.</string>
+    <string name="perm_usage">Usage Access</string>
+    <string name="perm_usage_desc">To monitor app behavior and background activity</string>
+    <string name="perm_notifications">Notifications</string>
+    <string name="perm_notifications_desc">To alert you of suspicious activity in real-time</string>
+    <string name="perm_accessibility">Accessibility</string>
+    <string name="perm_accessibility_desc">To detect advanced spyware abuse patterns</string>
+    <string name="privacy_reassurance">We only monitor for security purposes. Your personal data never leaves your device.</string>
+    <string name="continue_action_permissions">Continue</string>
+
+    <!-- Permission Steps -->
+    <string name="step_1_title">Step 1 of 3</string>
+    <string name="usage_perm_title">Usage Access Permission</string>
+    <string name="usage_perm_desc">This permission allows Vigilant to monitor which apps are running, how often they are used, and their background activity patterns.</string>
+    <string name="grant_permission_action">Grant Permission</string>
+    <string name="learn_more_action">Learn More</string>
+    <string name="monitoring_label">Monitoring</string>
+    <string name="app_a">App A</string>
+    <string name="app_b">App B</string>
+    <string name="detects_background_text">Detects apps running secretly in background</string>
+
+    <!-- Step 2 -->
+    <string name="step_2_title">Step 2 of 3</string>
+    <string name="notification_perm_title">Notification Permission</string>
+    <string name="notification_perm_desc">Enable notifications to receive real-time alerts when suspicious activity or spyware behavior is detected on your device.</string>
+    <string name="enable_notifications_action">Enable Notifications</string>
+    <string name="threat_detected_title">Threat Detected</string>
+    <string name="threat_detected_example">"Recorder" is using microphone in background.</string>
+    <string name="just_now">Just now</string>
+    <string name="skip_perm_action">Skip</string>
+
+    <!-- Step 3 -->
+    <string name="step_3_title">Step 3 of 3</string>
+    <string name="accessibility_perm_title">Accessibility Permission</string>
+    <string name="accessibility_perm_desc">This advanced permission allows Vigilant to detect if other apps are abusing accessibility services to read your screen or simulate touches.</string>
+    <string name="optional_badge">Optional</string>
+    <string name="why_needed_title">Why is this needed?</string>
+    <string name="why_needed_desc">Spyware often uses this service to steal data from other apps (like banking or chat apps).</string>
+
+    <!-- Permission Status Screen -->
+    <string name="perm_status_title">Permission Status</string>
+    <string name="ready_heading">You\'re almost ready</string>
+    <string name="ready_desc">Here\'s a summary of the permissions you\'ve granted. You can change these later in settings.</string>
+    <string name="status_granted">Granted</string>
+    <string name="status_not_granted">Not Granted</string>
+
+    <!-- Scan Intro Screen -->
+    <string name="initial_scan_title">Initial Device Scan</string>
+    <string name="initial_scan_desc">Vigilant will now scan your device to establish a safety baseline and detect any immediate threats.</string>
+    <string name="scan_apps_title">Installed Apps</string>
+    <string name="scan_apps_desc">Checking for known spyware signatures</string>
+    <string name="scan_perms_title">Permissions</string>
+    <string name="scan_perms_desc">Analyzing dangerous combinations</string>
+    <string name="scan_bg_title">Background Activity</string>
+    <string name="scan_bg_desc">Detecting silent operations</string>
+    <string name="start_scan_action">Start Scan</string>
+
+    <!-- Scan Progress Screen -->
+    <string name="scanning_title">Scanning Your Device</string>
+    <string name="scanning_desc">Vigilant is analyzing your device for spyware and suspicious behavior.</string>
+    <string name="scan_status_completed">Completed</string>
+    <string name="scan_status_analyzing">Analyzing…</string>
+    <string name="scan_status_queued">Queued</string>
+    <string name="privacy_reassurance_scan">Your data never leaves your device.\nThis scan runs securely on your phone.</string>
+
+    <!-- Scan Complete Screen -->
+    <string name="scan_complete_title">Scan Complete</string>
+    <string name="risk_score_label">Risk Score</string>
+    <string name="risk_level_high">High Risk</string>
+    <string name="risk_desc">Device Security Status</string>
+    <string name="high_risk_apps_label">High Risk Apps</string>
+    <string name="warnings_label">Warnings</string>
+    <string name="apps_scanned_count">87 Apps Scanned</string>
+    <string name="db_update_time">Database updated just now</string>
+    <string name="go_dashboard_action">Go to Dashboard</string>
+    <string name="view_details_action">View Details</string>
+
+    <!-- Low Risk Screen -->
+    <string name="risk_level_low">Low Risk</string>
+    <string name="risk_desc_low">Your device shows no significant spyware or suspicious behavior.</string>
+    <string name="minor_warnings_label">Minor Warnings</string>
+    <string name="scan_subtext_low">No known spyware signatures detected</string>
+    <string name="view_scan_details_action">View Scan Details</string>
+    <string name="recommend_scans_note">We recommend periodic scans to stay protected.</string>
+
+    <!-- Medium Risk Screen -->
+    <string name="risk_level_medium">Medium Risk</string>
+    <string name="risk_desc_medium">Some apps show behavior that may affect your privacy.</string>
+    <string name="potential_risk_app_label">Potential Risk App</string>
+    <string name="scan_subtext_medium">Some permissions require review</string>
+    <string name="review_warnings_action">Review Warnings</string>
+    <string name="privacy_risk_note">Reviewing app permissions can reduce privacy risks.</string>
+
+    <!-- Dashboard Common -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_apps">Apps</string>
+    <string name="nav_community">Community</string>
+    <string name="nav_profile">Profile</string>
+    <string name="subtitle_safe">Protected • No threats detected</string>
+    <string name="subtitle_risk">Protected • Last scan 2m ago</string>
+
+    <!-- Dashboard Safe -->
+    <string name="all_clear_title">All Clear</string>
+    <string name="all_clear_desc">No suspicious activity detected on your device.\nYou’re currently safe.</string>
+    <string name="card_scan_title">Run Regular Scans</string>
+    <string name="card_scan_desc">Schedule daily safety checks</string>
+    <string name="card_monitor_title">Monitor Permissions</string>
+    <string name="card_monitor_desc">Review what apps can access</string>
+    <string name="card_community_title">Check Community</string>
+    <string name="card_community_desc">See latest reported threats</string>
+    <string name="card_schedule_title">Scheduled Scan</string>
+    <string name="card_schedule_desc">Automate daily device scans</string>
+    <string name="start_scan_dashboard">Start Scan</string>
+
+    <!-- Dashboard Risk -->
+    <string name="scan_now_action">Scan Now</string>
+    <string name="emergency_action">Emergency</string>
+    <string name="recent_alerts_title">Recent Alerts</string>
+    <string name="view_all_action">View All</string>
+    <string name="alert_spyware_title">Spyware Behavior</string>
+    <string name="alert_spyware_desc">Recorder accessed microphone while screen was off</string>
+    <string name="alert_perm_title">Suspicious Permission</string>
+    <string name="alert_perm_desc">Flashlight requested location access</string>
+    <string name="suspicious_app_reason">Why: Hidden background recording, excessive permissions</string>
+    <string name="view_analysis_action">View Analysis →</string>
+
+    <!-- Dashboard Medium -->
+    <string name="review_recommendations_action">Review Recommendations</string>
+    <string name="alert_location_bg_title">Background Location</string>
+    <string name="alert_location_bg_desc">Maps accessed location in background</string>
+    <string name="alert_unused_perm_title">Unused Permissions</string>
+    <string name="alert_unused_perm_desc">3 apps have unused camera access</string>
+
+    <!-- Installed Apps Screen -->
+    <string name="installed_apps_title">Installed Apps</string>
+    <string name="installed_apps_subtitle">Analyzed • 124 apps</string>
+    <string name="search_apps_hint">Search installed apps or package name</string>
+    <string name="filter_all">All</string>
+    <string name="filter_high_risk">High Risk</string>
+    <string name="filter_medium_risk">Medium Risk</string>
+    <string name="filter_safe">Safe</string>
+    <!-- App Examples -->
+    <string name="app_voice_recorder">Voice Recorder</string>
+    <string name="pkg_voice_recorder">com.audio.recorder</string>
+    <string name="reason_mic">Background microphone access</string>
+    <string name="app_flashlight">Flashlight Pro</string>
+    <string name="pkg_flashlight">com.light.pro</string>
+    <string name="reason_perms">Excessive permissions</string>
+    <string name="app_calculator">Calculator+</string>
+    <string name="pkg_calculator">com.calc.plus</string>
+    <string name="app_weather">Weather Now</string>
+    <string name="pkg_weather">com.weather.now</string>
+    <string name="reason_none">No suspicious behavior detected</string>
+    <string name="app_notes">Notes</string>
+    <string name="pkg_notes">com.notes.app</string>
+
+    <!-- App Analysis Screen -->
+    <string name="app_analysis_title">App Analysis</string>
+    <string name="scanned_app_version">com.audio.recorder • v2.4.1</string>
+    <string name="status_critical">Critical</string>
+    <string name="risk_critical_title">Critical Risk Detected</string>
+    <string name="risk_critical_desc">This app poses a serious privacy threat</string>
+    <string name="behaviors_title">Detected Behaviors</string>
+    <string name="behavior_recording_title">Background Recording</string>
+    <string name="behavior_recording_desc">Microphone used while screen off</string>
+    <string name="behavior_perms_title">Dangerous Permissions</string>
+    <string name="behavior_perms_desc">Camera + Mic + Location</string>
+    <string name="behavior_accessibility_title">Accessibility Abuse</string>
+    <string name="behavior_accessibility_desc">Can read screen content</string>
+    <string name="action_timeline">View Permission Timeline</string>
+    <string name="action_revoke">Revoke Permissions</string>
+    <string name="action_uninstall">Uninstall App</string>
+    <string name="action_ask_assistant">Ask Vigilant Assistant</string>
+    <string name="msg_privacy_threat">This app poses a serious privacy threat</string>
+    <string name="last_scanned_caption">Last scanned: Today, 10:42 AM</string>
+
+    <!-- Weekly Report -->
+    <string name="title_weekly_report">Weekly Report</string>
+    <string name="report_date_range">Jan 15 - Jan 22</string>
+    <string name="label_threats">Threats</string>
+    <string name="label_violations">Violations</string>
+    <string name="label_alerts">Alerts</string>
+    <string name="header_risk_trend">Risk Trend</string>
+    <string name="header_top_offenders">Top Offenders</string>
+    <string name="action_analytics">View Analytics</string>
+
+    <!-- Permission Timeline -->
+    <string name="timeline_title">Permission Timeline</string>
+    <string name="timeline_subtitle">Voice Recorder</string>
+    
+    <string name="event_mic_title">Microphone Accessed</string>
+    <string name="event_mic_desc">Used microphone while screen was OFF</string>
+    <string name="event_mic_time">Today • 10:38 AM</string>
+    <string name="badge_bg_activity">Background activity</string>
+
+    <string name="event_loc_title">Location Accessed</string>
+    <string name="event_loc_desc">Requested precise location</string>
+    <string name="event_loc_time">Today • 10:35 AM</string>
+    <string name="badge_unnecessary">Unnecessary access</string>
+
+    <string name="event_cam_title">Camera Permission Used</string>
+    <string name="event_cam_desc">Accessed without user interaction</string>
+    <string name="event_cam_time">Today • 10:12 AM</string>
+
+    <string name="event_acc_title">Accessibility Service Active</string>
+    <string name="event_acc_desc">Can read screen content and simulate touches</string>
+    <string name="event_acc_time">Yesterday • 9:54 PM</string>
+    <string name="badge_high_risk">High-risk capability</string>
+
+    <string name="legend_red">Dangerous behavior</string>
+    <string name="legend_amber">Suspicious behavior</string>
+    
+    <string name="action_manage_perms">Manage Permissions</string>
+    <string name="action_disable_access">Disable App Access</string>
+
+    <!-- Manage Permissions Screen -->
+    <string name="manage_perms_title">Manage Permissions</string>
+    <string name="perm_mic_title">Microphone</string>
+    <string name="perm_mic_desc">Used in background while screen is off</string>
+    <string name="risk_high">High Risk</string>
+    
+    <string name="perm_cam_title">Camera</string>
+    <string name="perm_cam_desc">Accessed without direct user interaction</string>
+    <string name="risk_suspicious">Suspicious</string>
+    
+    <string name="perm_loc_title">Location</string>
+    <string name="perm_loc_desc">Requested precise location</string>
+    
+    <string name="perm_acc_title">Accessibility Service</string>
+    <string name="perm_acc_desc">Can read screen content and simulate touches</string>
+    <string name="risk_critical_perm">Critical Permission</string>
+    
+    <string name="perm_notif_title">Notifications</string>
+    <string name="perm_notif_desc">Used to send alerts</string>
+    <string name="risk_safe">Safe</string>
+    
+    <string name="notice_desc">Vigilant does not disable permissions automatically.\nYou remain in full control.</string>
+    <string name="action_open_settings">Open System Permission Settings</string>
+    <string name="action_rescan">Re-scan App After Changes</string>
+    
+    <!-- Emergency Mode -->
+    <string name="emergency_title">Emergency Mode</string>
+    <string name="emergency_subtitle">Immediate device protection</string>
+    <string name="emergency_hero_title">Emergency Mode Activated</string>
+    <string name="emergency_hero_desc">Vigilant is applying immediate protections to reduce risk.</string>
+    
+    <string name="action_disable_sens_title">Disable Sensitive Permissions</string>
+    <string name="action_disable_sens_desc">Temporarily restrict microphone, camera, and accessibility access</string>
+    <string name="status_recommended">Recommended</string>
+    
+    <string name="action_stop_bg_title">Stop Background Activity</string>
+    <string name="action_stop_bg_desc">Limit background execution of high-risk apps</string>
+    
+    <string name="action_silent_title">Enable Silent Alerts</string>
+    <string name="action_silent_desc">Receive discreet security alerts</string>
+    
+    <string name="action_safe_settings_title">Open Safe Settings</string>
+    <string name="action_safe_settings_desc">Review system-level security options</string>
+    
+    <string name="emergency_warning">Emergency Mode does not uninstall apps or collect personal data. You remain in full control.</string>
+    
+    <string name="action_exit_emergency">Exit Emergency Mode</string>
+    <string name="action_view_affected">View Affected Apps</string>
+
+    <!-- Scan Results New -->
+    <string name="scan_results_subtitle">Scan completed • Just now</string>
+    <string name="results_threats_detected_label">Threats Detected</string>
+    <string name="results_summary_caption">Device Scan Summary</string>
+    <string name="results_high_risk_count">1</string>
+    <string name="results_med_risk_count">2</string>
+    <string name="results_safe_count">121</string>
+    <string name="results_top_threats_title">Top Threats Found</string>
+    <string name="action_review_threats">Review Threats</string>
+    <string name="action_view_installed">View Installed Apps</string>
+    <string name="results_info_text">Vigilant scans apps, permissions, and background behavior.\nNo personal data is collected or transmitted.</string>
+    <string name="risk_critical">Critical</string>
+    <string name="risk_medium">Medium</string>
+    <string name="reason_loc_unnecessary">Unnecessary location access</string>
+    <string name="reason_mic_bg">Microphone accessed while screen off</string>
+
+    <!-- Community Feed -->
+    <string name="community_title">Community</string>
+    <string name="community_subtitle">Latest reported threats</string>
+    <string name="chip_all">All</string>
+    <string name="chip_spyware">Spyware</string>
+    <string name="chip_stalkerware">Stalkerware</string>
+    <string name="chip_perm_abuse">Permission Abuse</string>
+    <string name="chip_high_risk">High Risk</string>
+    
+    <string name="action_report_app">Report App</string>
+    <string name="action_back_reports">Back to My Reports</string>
+    <string name="action_go_community">Go to Community</string>
+
+    <string name="report_footer_1">Reported by 27 users • 2h ago</string>
+    <string name="report_footer_2">Reported by 15 users • 5h ago</string>
+    <string name="report_footer_3">Reported by 102 users • 1d ago</string>
+    
+    <string name="community_app_1">Call Recorder Plus</string>
+    <string name="community_desc_1">Accessing microphone without user action</string>
+    
+    <string name="community_app_2">Find My Kids Tracker</string>
+    <string name="community_desc_2">Sending location data to unknown server</string>
+    
+    <string name="community_app_3">Super Flashlight</string>
+    <string name="community_desc_3">Requests contacts permission unnecessarily</string>
+
+    <!-- Community Threat Detail -->
+    <string name="community_report_title">Community Report</string>
+    <string name="category_spyware">Spyware</string>
+    <string name="stat_reports_label">Reports</string>
+    <string name="stat_reports_val">127</string>
+    <string name="stat_seen_label">First seen</string>
+    <string name="stat_seen_val">Jan 2026</string>
+    <string name="stat_last_label">Last reported</string>
+    <string name="stat_last_val">Today</string>
+    <string name="reported_behaviors_title">Reported Behaviors</string>
+    <string name="behavior_mic_bg">Background microphone recording</string>
+    <string name="behavior_acc_abuse">Accessibility service abuse</string>
+    <string name="behavior_hidden_exec">Hidden background execution</string>
+    <string name="community_safety_notice">Community reports are anonymized and verified by patterns, not individuals.</string>
+    <string name="action_check_device">Check This App on My Device</string>
+    <string name="action_report_this">Report This App</string>
+
+    <!-- Report App Screen -->
+    <string name="report_app_title">Report App</string>
+    <string name="label_select_app">Select App</string>
+    <string name="hint_select_app">Search for an app...</string>
+    <string name="label_category">Category</string>
+    <string name="cat_spyware">Spyware</string>
+    <string name="cat_stalkerware">Stalkerware</string>
+    <string name="cat_perm_abuse">Permission Abuse</string>
+    <string name="label_description">Description</string>
+    <string name="hint_description">Describe the suspicious behavior...</string>
+    <string name="action_continue">Continue</string>
+
+    <!-- Report Consent Screen -->
+    <string name="consent_title">Your Privacy Comes First</string>
+    <string name="consent_point_1">Reports are anonymous</string>
+    <string name="consent_point_2">No personal data is shared</string>
+    <string name="consent_point_3">App usage data is never uploaded</string>
+    <string name="consent_checkbox">I understand and consent</string>
+
+    <!-- Report Additional Details -->
+    <string name="additional_details_title">Additional Details</string>
+    <string name="hint_additional_details">Describe what you noticed (optional)</string>
+    <string name="label_examples">Examples</string>
+    <string name="example_report_1">Microphone indicator appeared unexpectedly</string>
+    <string name="example_report_2">Phone heated while idle</string>
+    <string name="action_submit_report">Submit Report</string>
+
+    <!-- Report Success Screen -->
+    <string name="report_success_title">Thank You for Helping Others Stay Safe</string>
+    <string name="report_success_message">Your report will help improve community protection.</string>
+    <string name="action_back_community">Back to Community</string>
+    <string name="action_view_reports">View My Reports</string>
+
+    <!-- Profile Screen -->
+    <string name="title_profile">Profile</string>
+    <string name="profile_name">John Doe</string>
+    <string name="profile_email">john@example.com</string>
+    <string name="profile_badge_premium">Premium</string>
+    <string name="status_protection_active">Protection Active</string>
+    <string name="status_protection_desc">Your account is secure</string>
+    <string name="action_edit_profile">Edit Profile</string>
+    <string name="action_account_security">Account Security</string>
+    <string name="action_session_mgmt">Session Management</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Edit Profile Screen -->
+    <string name="title_edit_profile">Edit Profile</string>
+    <string name="btn_edit_avatar">Edit</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_email">Email</string>
+    <string name="label_phone">Phone Number</string>
+    <string name="value_phone">+1 234 567 8900</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save_changes">Save Changes</string>
+
+    <!-- Security Settings Screen -->
+    <string name="title_security_settings">Security Settings</string>
+    <string name="security_overview_title">Account Protection</string>
+    <string name="security_overview_caption">Your security features are active</string>
+    <string name="opt_app_lock">App Lock</string>
+    <string name="opt_app_lock_desc">Secure access to Vigilant</string>
+    <string name="status_enabled">Enabled</string>
+    <string name="opt_biometrics">Biometric Authentication</string>
+    <string name="opt_biometrics_desc">Fingerprint or face unlock</string>
+    <string name="opt_change_pin">Change App PIN</string>
+    <string name="opt_change_pin_desc">Update your security PIN</string>
+    <string name="opt_2fa">Two-Factor Authentication</string>
+    <string name="opt_2fa_desc">Extra layer of account security</string>
+    <string name="status_not_enabled">Not Enabled</string>
+    <string name="security_info_note">Security settings protect access to Vigilant and prevent unauthorized changes.</string>
+
+    <!-- Active Sessions Screen -->
+    <string name="title_active_sessions">Active Sessions</string>
+    <string name="session_current_badge">Current Session</string>
+    <string name="session_current_device">Pixel 7 Pro</string>
+    <string name="session_current_os">Android 14</string>
+    <string name="session_current_loc">India</string>
+    <string name="session_last_active_now">Now</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="session_warning">If you don\'t recognize a device, sign out immediately.</string>
+    <string name="action_sign_out_all">Sign out of all other sessions</string>
+
+    <!-- Account Actions Screen -->
+    <string name="title_account_actions">Account Actions</string>
+    <string name="warning_sensitive_actions">Sensitive Account Actions</string>
+    <string name="warning_sensitive_caption">These actions affect your account permanently.</string>
+    <string name="action_reset_security">Reset Security Setup</string>
+    <string name="desc_reset_security">Reset PIN, biometrics, and security preferences</string>
+    <string name="btn_reset_security">Reset Security</string>
+    <string name="action_sign_out_everywhere">Sign Out of All Devices</string>
+    <string name="desc_sign_out_everywhere">Immediately sign out from every device</string>
+    <string name="btn_sign_out_everywhere">Sign Out Everywhere</string>
+    <string name="action_delete_account">Delete Account</string>
+    <string name="desc_delete_account">Permanently delete account and all data</string>
+    <string name="btn_delete_account">Delete Account</string>
+    <string name="note_delete_undo">This action cannot be undone</string>
+    <string name="action_logout">Logout</string>
+    <string name="desc_logout">Sign out from this device</string>
+    <string name="privacy_assurance">Your data is never shared and is permanently removed upon deletion.</string>
+
+    <!-- Settings Home -->
+    <string name="title_settings">Settings</string>
+    <string name="cat_account">Account</string>
+    <string name="cat_account_desc">Profile &amp; security</string>
+    <string name="cat_scan">Scan &amp; Detection</string>
+    <string name="cat_scan_desc">Auto-scan, sensitivity</string>
+    <string name="cat_notifications">Alert Rules</string>
+    <string name="cat_notifications_desc">Alerts &amp; quiet hours</string>
+    <string name="cat_privacy">Privacy &amp; Data</string>
+    <string name="cat_privacy_desc">Data usage &amp; logs</string>
+    <string name="cat_legal">Legal</string>
+    <string name="cat_legal_desc">Terms &amp; policies</string>
+    <string name="cat_about">About Vigilant</string>
+    <string name="app_version">Vigilant v2.4.1 (Build 482)</string>
+    <string name="footer_links">Help • About • Legal</string>
+
+    <!-- Privacy & Data -->
+    <string name="title_privacy_data">Privacy &amp; Data</string>
+    <string name="privacy_promise_title">Our Promise</string>
+    <string name="privacy_promise_text">Vigilant is privacy-first. Your data never leaves your device.\nOnly anonymous technical signals are used to improve detection.</string>
+    <string name="header_data_collection">Data Collection</string>
+    <string name="opt_usage_stats">Anonymous Usage Stats</string>
+    <string name="desc_usage_stats">Help us improve the app</string>
+    <string name="opt_crash_reports">Crash Reports</string>
+    <string name="desc_crash_reports">Send logs when app crashes</string>
+    <string name="action_privacy_ledger">View Privacy Ledger</string>
+    <string name="action_download_data">Download My Data</string>
+
+    <!-- Alert Rules (Notifications) -->
+    <string name="title_alert_rules">Alert Rules</string>
+    <string name="header_triggers">Notification Triggers</string>
+    <string name="chk_critical">Critical threats detected</string>
+    <string name="chk_suspicious">Suspicious behavior</string>
+    <string name="chk_permission">Permission changes</string>
+    <string name="chk_community">Community reports</string>
+    <string name="header_quiet_hours">Quiet Hours</string>
+    <string name="opt_quiet_hours">Enable Quiet Hours</string>
+    <string name="label_start_time">Start</string>
+    <string name="label_end_time">End</string>
+
+    <!-- Scan & Detection -->
+    <string name="title_scan_settings">Scan &amp; Detection</string>
+    <string name="header_automation">Automation</string>
+    <string name="opt_auto_scan">Automatic Scanning</string>
+    <string name="desc_auto_scan">Scan device in background</string>
+    <string name="label_scan_freq">Scan Frequency</string>
+    <string name="val_scan_freq">Daily (Recommended)</string>
+    <string name="header_sensitivity">Sensitivity</string>
+    <string name="label_detect_level">Detection Level</string>
+    <string name="val_level_med">Medium</string>
+    <string name="label_low">Low</string>
+    <string name="label_high">High</string>
+    <string name="opt_deep_scan">Deep Scan</string>
+    <string name="desc_deep_scan">Analyze file contents (Slower)</string>
+
+    <!-- Legal -->
+    <string name="title_legal">Legal</string>
+    <string name="item_tos">Terms of Service</string>
+    <string name="item_privacy_policy">Privacy Policy</string>
+    <string name="item_licenses">Open Source Licenses</string>
+    <string name="legal_last_updated">Last updated: Oct 2024</string>
+
+    <!-- About -->
+    <string name="desc_app_purpose">Protecting digital privacy through behavior-based detection.</string>
+    <string name="label_developer">Developer: Vigilant Security Inc.</string>
+    <string name="label_website">Website: vigilant.app</string>
+    <string name="label_contact">Contact: support@vigilant.app</string>
+    <string name="copyright">© 2024 Vigilant Security Inc.</string>
+    <string name="tagline_privacy">Made with privacy in mind.</string>
+
+
+
+    <!-- Empty/Error States -->
+    <string name="title_offline">You\'re offline</string>
+    <string name="desc_offline">Real-time detection is paused.</string>
+    <string name="action_retry">Retry Connection</string>
+    
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_description">Vigilant uses accessibility services to detect if other apps are abusing accessibility features to read your screen or simulate touches. This helps identify advanced spyware behavior.</string>
+    
+    <!-- Missing category string -->
+    <string name="cat_data_theft">Data Theft</string>
+    <string name="report_help_title">Help Protect Others</string>
+    <string name="report_help_desc">Report suspicious apps to the community</string>
+    <string name="empty_community_title">No Community Reports</string>
+    <string name="empty_community_desc">The community has not reported any new threats recently.</string>
+</resources>

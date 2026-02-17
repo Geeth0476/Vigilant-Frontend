@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="Scheduled Scan"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:navigationIcon="@drawable/ic_arrow_back_black"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Automate your security"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vigilant enables you to schedule daily scans to ensure your device is always protected, even when you forget."
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="32dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/vigilant_stroke"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="24dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+                        
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Enable Daily Scan"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchEnableSchedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    
+                    <TextView
+                        android:id="@+id/tvStatusFeedback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan schedule is active"
+                        android:textSize="12sp"
+                        android:textColor="@color/vigilant_green"
+                        android:layout_marginBottom="16dp"/>
+                   
+                    <LinearLayout
+                        android:id="@+id/llTimePickerContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/surface_variant"
+                            android:layout_marginBottom="16dp"/>
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Time"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TimePicker
+                            android:id="@+id/timePicker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.Vigilant.TimePicker"
+                            android:timePickerMode="spinner"
+                            android:layout_gravity="center_horizontal"/>
+                            
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/surface_variant"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"/>
+                            
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scan Type"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="8dp"/>
+                            
+                        <RadioGroup
+                            android:id="@+id/rgScanType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            
+                            <RadioButton
+                                android:id="@+id/rbQuickScan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quick Scan"
+                                android:textSize="14sp"
+                                android:checked="true"/>
+                                
+                            <RadioButton
+                                android:id="@+id/rbDeepScan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Deep Scan"
+                                android:textSize="14sp"/>
+                        </RadioGroup>
+                    </LinearLayout>
+                        
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Save Schedule"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/vigilant_blue"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+

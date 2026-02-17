@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="16dp">
+
+    <!-- Timeline Dot Column -->
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="0dp">
+        <!-- Dot -->
+        <View
+            android:id="@+id/vTimelineDot"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/bg_circle_red"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="24dp"/>
+    </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/ivEventIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_mic_red"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvEventTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/event_mic_title"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                
+                <TextView
+                    android:id="@+id/tvEventTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:38 AM"
+                    android:textSize="12sp"
+                    android:textColor="@color/vigilant_text_secondary"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvEventDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_mic_desc"
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Badge -->
+            <LinearLayout
+                android:id="@+id/llEventBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_nav_pill_active"
+                android:backgroundTint="#FFEBEE"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+                
+                <TextView
+                    android:id="@+id/tvEventBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/badge_bg_activity"
+                    android:textSize="10sp"
+                    android:textColor="@color/vigilant_red"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+

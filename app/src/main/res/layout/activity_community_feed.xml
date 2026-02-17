@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CommunityFeedActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="@string/community_title"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/community_subtitle"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:menu="@menu/top_app_info_menu"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="100dp">
+    
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+    
+                <!-- Search Bar -->
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:paddingStart="16dp"
+                     android:paddingEnd="16dp"
+                     android:paddingBottom="8dp"
+                     android:paddingTop="16dp">
+    
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="48dp"
+                         android:background="@drawable/bg_rounded_icon"
+                         android:backgroundTint="@color/surface_variant"
+                         android:orientation="horizontal"
+                         android:gravity="center_vertical"
+                         android:paddingStart="16dp">
+                         
+                         <ImageView
+                             android:layout_width="24dp"
+                             android:layout_height="24dp"
+                             android:src="@drawable/ic_search"
+                             app:tint="@color/vigilant_text_secondary"/>
+                         
+                         <EditText
+                             android:id="@+id/etSearchCommunity"
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:background="@null"
+                             android:hint="@string/search_apps_hint"
+                             android:textColorHint="@color/vigilant_text_secondary"
+                             android:textColor="@color/black"
+                             android:textSize="14sp"
+                             android:layout_marginStart="12dp"
+                             android:inputType="text"
+                             android:imeOptions="actionSearch"
+                             android:maxLines="1"/>
+                     </LinearLayout>
+                 </LinearLayout>
+    
+                <!-- Filter Chips -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+                    android:clipToPadding="false">
+    
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true">
+    
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_all"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:checked="true"
+                            app:chipBackgroundColor="@color/vigilant_blue"
+                            android:textColor="@color/white"
+                            app:chipCornerRadius="20dp"
+                            app:rippleColor="@color/white"/>
+                            
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipSpyware"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_spyware"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:textColor="@color/black"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/vigilant_text_secondary"
+                            app:chipStrokeWidth="1dp"
+                            app:chipCornerRadius="20dp"/>
+                            
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipStalkerware"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_stalkerware"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:textColor="@color/black"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/vigilant_text_secondary"
+                            app:chipStrokeWidth="1dp"
+                            app:chipCornerRadius="20dp"/>
+    
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHighRisk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_high_risk"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:textColor="@color/black"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/vigilant_text_secondary"
+                            app:chipStrokeWidth="1dp"
+                            app:chipCornerRadius="20dp"/>
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+    
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCommunityFeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:clipToPadding="false"
+                    android:layoutAnimation="@anim/layout_animation_fall_down"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+    
+                <!-- Empty State -->
+                <LinearLayout
+                    android:id="@+id/layoutEmptyState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:visibility="gone">
+    
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_nav_community"
+                        app:tint="@color/vigilant_text_secondary"
+                        android:layout_marginBottom="16dp"/>
+    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/empty_community_title"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp"/>
+    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/empty_community_desc"
+                        android:textSize="14sp"
+                        android:textColor="@color/vigilant_text_secondary"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="90dp"
+        android:text="@string/action_report_app"
+        app:icon="@drawable/ic_add_white"
+        android:textColor="@color/white"
+        app:iconTint="@color/white"
+        android:backgroundTint="@color/vigilant_blue"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled"
+        android:background="@color/white"
+        app:itemIconTint="@color/vigilant_nav_item_color"
+        app:itemTextColor="@color/vigilant_nav_text_color"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

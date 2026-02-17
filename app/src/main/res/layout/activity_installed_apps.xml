@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".InstalledAppsActivity">
+
+     <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="@string/installed_apps_title"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/installed_apps_subtitle"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:menu="@menu/top_app_bar_menu" 
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+
+         <!-- Search Bar -->
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/white"
+             android:paddingStart="16dp"
+             android:paddingEnd="16dp"
+             android:paddingBottom="8dp">
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="48dp"
+                 android:background="@drawable/bg_rounded_icon"
+                 android:backgroundTint="@color/surface_variant"
+                 android:orientation="horizontal"
+                 android:gravity="center_vertical"
+                 android:paddingStart="16dp">
+                 
+                 <ImageView
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:src="@drawable/ic_search"
+                     app:tint="@color/vigilant_text_secondary"/>
+                 
+                 <EditText
+                     android:id="@+id/etSearchApps"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:background="@null"
+                     android:hint="@string/search_apps_hint"
+                     android:textColorHint="@color/vigilant_text_secondary"
+                     android:textColor="@color/black"
+                     android:textSize="14sp"
+                     android:layout_marginStart="12dp"
+                     android:inputType="text"
+                     android:imeOptions="actionSearch"
+                     android:maxLines="1"/>
+             </LinearLayout>
+         </LinearLayout>
+
+         <!-- Filter Chips -->
+         <HorizontalScrollView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/white"
+             android:scrollbars="none"
+             android:paddingStart="16dp"
+             android:paddingEnd="16dp"
+             android:paddingBottom="16dp"
+             android:clipToPadding="false">
+             
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal">
+                 
+                 <com.google.android.material.chip.Chip
+                     android:id="@+id/chipAllApps"
+                     style="@style/Widget.MaterialComponents.Chip.Choice"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/filter_all"
+                     android:textColor="@color/white"
+                     android:checked="true"
+                     app:chipBackgroundColor="@color/vigilant_blue"
+                     app:chipStrokeWidth="0dp"
+                     app:chipCornerRadius="16dp"
+                     android:layout_marginEnd="8dp"/>
+                 
+                 <com.google.android.material.chip.Chip
+                     android:id="@+id/chipHighRiskApps"
+                     style="@style/Widget.MaterialComponents.Chip.Choice"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/filter_high_risk"
+                     android:textColor="@color/black"
+                     app:chipBackgroundColor="@color/white"
+                     app:chipStrokeColor="@color/vigilant_text_secondary"
+                     app:chipStrokeWidth="1dp"
+                     app:chipCornerRadius="16dp"
+                     android:layout_marginEnd="8dp"/>
+
+                 <com.google.android.material.chip.Chip
+                     android:id="@+id/chipMediumRiskApps"
+                     style="@style/Widget.MaterialComponents.Chip.Choice"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/filter_medium_risk"
+                     android:textColor="@color/black"
+                     app:chipBackgroundColor="@color/white"
+                     app:chipStrokeColor="@color/vigilant_text_secondary"
+                     app:chipStrokeWidth="1dp"
+                     app:chipCornerRadius="16dp"
+                     android:layout_marginEnd="8dp"/>
+                 
+                 <com.google.android.material.chip.Chip
+                     android:id="@+id/chipSafeApps"
+                     style="@style/Widget.MaterialComponents.Chip.Choice"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/filter_safe"
+                     android:textColor="@color/black"
+                     app:chipBackgroundColor="@color/white"
+                     app:chipStrokeColor="@color/vigilant_text_secondary"
+                     app:chipStrokeWidth="1dp"
+                     app:chipCornerRadius="16dp"/>
+             </LinearLayout>
+         </HorizontalScrollView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- App List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInstalledApps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
+        android:layout_marginBottom="80dp"
+        android:background="@color/background"
+        tools:listitem="@layout/item_installed_app"/>
+
+    <!-- Empty State -->
+    <include
+        android:id="@+id/layoutEmptyState"
+        layout="@layout/layout_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/vigilant_nav_item_color" 
+        app:itemTextColor="@color/vigilant_nav_text_color"
+        app:labelVisibilityMode="labeled"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

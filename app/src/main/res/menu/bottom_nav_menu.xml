@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/ic_shield_analytics_white" 
+        android:title="@string/nav_dashboard" />
+    <item
+        android:id="@+id/nav_apps"
+        android:icon="@drawable/ic_phone_android_blue"
+        android:title="@string/nav_apps" />
+    <item
+        android:id="@+id/nav_community"
+        android:icon="@drawable/ic_bell_outline_orange" 
+        android:title="@string/nav_community" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_vigilant_logo"
+        android:title="@string/nav_profile" />
+</menu>

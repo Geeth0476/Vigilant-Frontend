@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Vigilant Colors -->
+    <color name="vigilant_blue">#3F51B5</color>
+    <color name="vigilant_text_primary">#212121</color>
+    <color name="vigilant_text_secondary">#616161</color>
+    <color name="vigilant_input_bg">#FAFAFA</color>
+    <color name="vigilant_stroke">#E0E0E0</color>
+    <color name="vigilant_purple">#9C27B0</color>
+    <color name="vigilant_red">#F44336</color>
+    <color name="vigilant_red_bg_light">#FFEBEE</color>
+    <color name="vigilant_amber_bg_light">#FFF8E1</color>
+    <color name="vigilant_orange_bg_light">#FFF3E0</color>
+    <color name="vigilant_purple_bg_light">#F3E5F5</color>
+    <color name="vigilant_blue_grey_bg_light">#ECEFF1</color>
+    <color name="vigilant_green_bg_light">#E8F5E9</color>
+    <color name="vigilant_green">#4CAF50</color>
+    <color name="vigilant_amber">#FFC107</color>
+
+    <!-- Logo Colors -->
+    <color name="vigilant_logo_blue">#009BE5</color>
+    <color name="vigilant_logo_dark">#152C39</color>
+    <color name="vigilant_logo_cyan">#00C2FF</color>
+    
+    <!-- Navigation Colors -->
+    <color name="vigilant_nav_pill_color">#45455D</color>
+    
+    <!-- Surface Colors -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="background">#FAFAFA</color>
+    <color name="surface_dark">#121212</color>
+    
+    <!-- Primary Variants -->
+    <color name="vigilant_blue_light">#E3F2FD</color>
+    <color name="vigilant_blue_dark">#283593</color>
+    <color name="vigilant_blue_pressed">#3949AB</color>
+    <color name="vigilant_blue_disabled">#BDBDBD</color>
+    
+    <!-- Semantic Colors -->
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="on_surface">#212121</color>
+    <color name="on_surface_variant">#616161</color>
+    
+    <!-- State Colors -->
+    <color name="ripple_color">#1F000000</color>
+    <color name="divider">#1F000000</color>
+
+    <!-- Compatibility / Missing Colors -->
+    <color name="vigilant_orange">#FF9800</color>
+    <color name="vigilant_gray_bg">#F5F5F5</color>
+    <color name="vigilant_light_blue_bg">@color/vigilant_blue_light</color>
+    <color name="vigilant_light_purple_bg">@color/vigilant_purple_bg_light</color>
+    <color name="vigilant_light_yellow_bg">@color/vigilant_amber_bg_light</color>
+    <color name="vigilant_success_bg">@color/vigilant_green_bg_light</color>
+    <color name="vigilant_success_green">@color/vigilant_green</color>
+    <color name="vigilant_success_icon">@color/vigilant_green</color>
+
+
+
+    <!-- Gradient Colors -->
+    <color name="vigilant_gradient_start">#E8EAF6</color>
+    <color name="vigilant_gradient_end">#FFFFFF</color>
+</resources>

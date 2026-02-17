@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="anim_duration_short">200</integer>
+    <integer name="anim_duration_medium">400</integer>
+    <integer name="anim_duration_long">600</integer>
+    <integer name="anim_duration_xl">1000</integer>
+    <integer name="anim_duration_score_count">1500</integer>
+    <integer name="splash_screen_duration">3000</integer>
+</resources>

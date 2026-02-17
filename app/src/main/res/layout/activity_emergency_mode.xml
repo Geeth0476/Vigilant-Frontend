@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".EmergencyModeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/emergency_title"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/emergency_subtitle"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:menu="@menu/top_app_close_menu" 
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+         <!-- Need menu or navigationIcon. User requested "Right: Close (X)". Standard is left nav or right menu. I'll use right menu item for close or a custom layout toolbar. 
+              Easiest is standard menu item. -->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Hero Section -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_circle_light_yellow"
+                android:backgroundTint="#FFF8E1"
+                android:layout_marginBottom="16dp">
+                 <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_shield_lightning"
+                    android:layout_gravity="center"
+                    app:tint="@color/vigilant_orange"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_hero_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_hero_desc"
+                android:textSize="14sp"
+                android:textColor="@color/vigilant_text_secondary"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Action Cards -->
+            <!-- 1. Disable Sensitive -->
+            <include 
+                android:id="@+id/cardDisableSensors"
+                layout="@layout/item_emergency_card_1" />
+            
+            <!-- 2. Stop Background -->
+            <include 
+                android:id="@+id/cardStopBackground"
+                layout="@layout/item_emergency_card_2" />
+            
+            <!-- 3. Silent Alerts -->
+            <include 
+                android:id="@+id/cardSilentMode"
+                layout="@layout/item_emergency_card_3" />
+            
+            <!-- 4. Safe Settings -->
+            <include 
+                android:id="@+id/cardSafeSettings"
+                layout="@layout/item_emergency_card_4" />
+
+            <!-- Warning Card -->
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 app:cardCornerRadius="16dp"
+                 app:strokeWidth="0dp"
+                 app:cardElevation="0dp"
+                 app:cardBackgroundColor="#FFEBEE"
+                 android:layout_marginTop="16dp"
+                 android:layout_marginBottom="24dp">
+                 
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:padding="16dp"
+                     android:gravity="center_vertical">
+                     
+                     <ImageView
+                         android:layout_width="24dp"
+                         android:layout_height="24dp"
+                         android:src="@drawable/ic_info_outline"
+                         app:tint="@color/vigilant_red"
+                         android:layout_marginEnd="16dp" />
+                     
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/emergency_warning"
+                         android:textSize="12sp"
+                         android:textColor="@color/vigilant_red"/>
+                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:padding="16dp"
+        app:elevation="16dp">
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExitEmergency"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/action_exit_emergency"
+            android:textColor="@color/vigilant_red"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/vigilant_red"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+            android:layout_marginBottom="8dp"
+            android:textAllCaps="false"/>
+            
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewAffected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_view_affected"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/vigilant_text_secondary"
+            android:textAllCaps="false"/>
+            
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

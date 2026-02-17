@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SecureAccessActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:navigationIcon="@drawable/abc_ic_ab_back_material"
+            app:title="@string/secure_access_title"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar" 
+            app:navigationIconTint="@color/black"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="?attr/actionBarSize"
+        android:paddingBottom="24dp">
+
+        <!-- Header Content (Lock & Text) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+            
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_lock_blue"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/tvPinTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_pin_heading"
+                android:textAppearance="@style/TextAppearance.Vigilant.Heading"
+                android:textSize="24sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvPinDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_pin_desc"
+                android:textAppearance="@style/TextAppearance.Vigilant.Body"
+                android:gravity="center"
+                android:layout_marginBottom="48dp"/>
+
+            <!-- PIN Indicators -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                
+                <View
+                    android:id="@+id/pinDot1"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/bg_pin_indicator_empty"
+                    android:layout_margin="12dp"/>
+                <View
+                    android:id="@+id/pinDot2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/bg_pin_indicator_empty"
+                    android:layout_margin="12dp"/>
+                <View
+                    android:id="@+id/pinDot3"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/bg_pin_indicator_empty"
+                    android:layout_margin="12dp"/>
+                <View
+                    android:id="@+id/pinDot4"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/bg_pin_indicator_empty"
+                    android:layout_margin="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Keypad & Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Row 1 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+                
+                <TextView
+                    android:id="@+id/btnKey1"
+                    style="@style/KeypadButtonStyle"
+                    android:text="1"/>
+                <TextView
+                    android:id="@+id/btnKey2"
+                    style="@style/KeypadButtonStyle"
+                    android:text="2"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"/>
+                <TextView
+                    android:id="@+id/btnKey3"
+                    style="@style/KeypadButtonStyle"
+                    android:text="3"/>
+            </LinearLayout>
+
+            <!-- Row 2 -->
+             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+                
+                <TextView
+                    android:id="@+id/btnKey4"
+                    style="@style/KeypadButtonStyle"
+                    android:text="4"/>
+                <TextView
+                    android:id="@+id/btnKey5"
+                    style="@style/KeypadButtonStyle"
+                    android:text="5"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"/>
+                <TextView
+                    android:id="@+id/btnKey6"
+                    style="@style/KeypadButtonStyle"
+                    android:text="6"/>
+            </LinearLayout>
+
+            <!-- Row 3 -->
+             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+                
+                <TextView
+                    android:id="@+id/btnKey7"
+                    style="@style/KeypadButtonStyle"
+                    android:text="7"/>
+                <TextView
+                    android:id="@+id/btnKey8"
+                    style="@style/KeypadButtonStyle"
+                    android:text="8"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"/>
+                <TextView
+                    android:id="@+id/btnKey9"
+                    style="@style/KeypadButtonStyle"
+                    android:text="9"/>
+            </LinearLayout>
+
+             <!-- Row 4 (0 and Backspace) -->
+             <RelativeLayout
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+                
+                <!-- 0 Button Centered -->
+                <TextView
+                    android:id="@+id/btnKey0"
+                    style="@style/KeypadButtonStyle"
+                    android:text="0"
+                    android:layout_centerInParent="true"/>
+
+                <!-- Backspace Button to the Right -->
+                <ImageView
+                    android:id="@+id/btnKeyBackspace"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_backspace"
+                    android:scaleType="centerInside"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"/>
+            </RelativeLayout>
+
+            <!-- Confirm Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmPin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/confirm_pin_action"
+                android:textAllCaps="false"
+                android:enabled="false"
+                android:textColor="@color/white"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:backgroundTint="@color/vigilant_blue"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

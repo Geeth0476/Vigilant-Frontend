@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".PermissionUsageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:navigationIcon="@drawable/abc_ic_ab_back_material"
+            app:title="@string/step_1_title"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar" 
+            app:navigationIconTint="@color/black"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Circular Icon -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_circle_light_blue"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/ic_usage_access"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usage_perm_title"
+                android:textAppearance="@style/TextAppearance.Vigilant.Heading"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Desc -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/usage_perm_desc"
+                android:textAppearance="@style/TextAppearance.Vigilant.Body"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+            <!-- Visualization Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F8F9FA" 
+                android:layout_marginBottom="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="32dp"
+                    android:paddingBottom="24dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <!-- App A -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                             <View
+                                android:layout_width="48dp"
+                                android:layout_height="64dp"
+                                android:background="@drawable/bg_rounded_icon"
+                                android:backgroundTint="@color/white"/>
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/app_a"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_text_secondary"
+                                 android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <!-- Monitoring -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="24dp">
+                             <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_usage_access"
+                                app:tint="@color/vigilant_blue"/>
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/monitoring_label"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_blue"
+                                 android:textStyle="bold"
+                                 android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <!-- App B -->
+                         <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                             <View
+                                android:layout_width="48dp"
+                                android:layout_height="64dp"
+                                android:background="@drawable/bg_rounded_icon"
+                                android:backgroundTint="@color/white"/>
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/app_b"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_text_secondary"
+                                 android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detects_background_text"
+                        android:textSize="12sp"
+                        android:textColor="@color/vigilant_text_secondary"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Grant Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGrantPermission"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/grant_permission_action"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                android:backgroundTint="@color/vigilant_blue"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Learn More -->
+            <TextView
+                android:id="@+id/tvLearnMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/learn_more_action"
+                android:textColor="@color/vigilant_text_secondary"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

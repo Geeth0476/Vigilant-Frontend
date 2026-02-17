@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DashboardActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/TextAppearance.Vigilant.Heading"
+            app:subtitle="@string/subtitle_safe"
+            app:subtitleTextAppearance="@style/TextAppearance.Vigilant.Body.Small"
+            app:menu="@menu/top_app_bar_menu" 
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/vigilant_text_secondary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="80dp"> 
+
+        <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:padding="24dp"
+             android:gravity="center_horizontal">
+
+             <!-- Hero Section: Dynamic -->
+             <FrameLayout
+                 android:layout_width="140dp"
+                 android:layout_height="140dp"
+                 android:layout_marginTop="16dp"
+                 android:layout_marginBottom="24dp">
+                 
+                 <!-- Dynamic Risk Progress -->
+                 <com.google.android.material.progressindicator.CircularProgressIndicator
+                     android:id="@+id/progressHeroRisk"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     app:indicatorSize="140dp"
+                     app:trackThickness="8dp"
+                     app:trackColor="@color/vigilant_stroke"
+                     app:indicatorColor="@color/vigilant_green"
+                     app:trackCornerRadius="4dp"
+                     android:max="100"
+                     android:progress="0"
+                     android:layout_gravity="center"/>
+
+                 <ImageView
+                     android:id="@+id/ivHeroIcon"
+                     android:layout_width="64dp"
+                     android:layout_height="64dp"
+                     android:src="@drawable/ic_shield_check_green"
+                     android:layout_gravity="center"/>
+                     
+                  <!-- Score Overlay (Visible for High Risk/Medium) -->
+                  <LinearLayout
+                     android:id="@+id/llScoreContainer"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:orientation="vertical"
+                     android:gravity="center"
+                     android:visibility="gone">
+                     
+                     <TextView
+                        android:id="@+id/tvHeroScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hero_score_example"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                     
+                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/risk_score_label"
+                        android:textSize="12sp"
+                        android:textColor="@color/vigilant_text_secondary"/>
+                 </LinearLayout>
+             </FrameLayout>
+
+             <TextView
+                 android:id="@+id/tvHeroTitle"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/all_clear_title"
+                 android:textAppearance="@style/TextAppearance.Vigilant.Heading"
+                 android:textSize="24sp"
+                 android:layout_marginBottom="8dp"/>
+
+             <TextView
+                 android:id="@+id/tvHeroDesc"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/all_clear_desc"
+                 android:textAppearance="@style/TextAppearance.Vigilant.Body"
+                 android:gravity="center"
+                 android:textColor="@color/vigilant_text_secondary"
+                 android:layout_marginBottom="32dp"/>
+
+             <!-- UNIFIED DYNAMIC ACTIONS (Placed here to match Image 1) -->
+             <LinearLayout
+                 android:id="@+id/llUnifiedActions"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginBottom="24dp">
+
+                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnActionPrimary"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_weight="1"
+                    android:text="@string/action_quick_scan"
+                    android:textAllCaps="false"
+                    app:icon="@drawable/ic_shield_check_green"
+                    app:iconGravity="textStart"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/vigilant_blue"
+                    android:layout_marginEnd="8dp"/>
+
+                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnActionSecondary"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_weight="1"
+                    android:text="@string/action_deep_scan"
+                    android:textAllCaps="false"
+                    app:icon="@drawable/ic_search"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/vigilant_blue"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeColor="@color/vigilant_blue"
+                    android:textColor="@color/vigilant_blue"
+                    android:layout_marginStart="8dp"/>
+             </LinearLayout>
+
+             <!-- HIGH RISK CONTAINER (Only Risk App Card now) -->
+             <LinearLayout
+                 android:id="@+id/llHighRiskContainer"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:visibility="gone"
+                 android:layout_marginBottom="24dp">
+                 
+                 <!-- Risk App Card Content only -->
+                   <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="@string/potential_risk_app_label"
+                      android:textStyle="bold"
+                      android:textSize="18sp"
+                      android:textColor="@color/black"
+                      android:layout_marginBottom="16dp"/>
+
+                   <com.google.android.material.card.MaterialCardView
+                      android:id="@+id/cardRiskApp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      app:cardCornerRadius="12dp"
+                      app:cardElevation="2dp"
+                      app:strokeWidth="0dp"
+                      app:cardBackgroundColor="@color/white">
+                      
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:padding="16dp">
+                          
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:gravity="center_vertical"
+                              android:layout_marginBottom="12dp">
+                              
+                              <FrameLayout
+                                  android:layout_width="48dp"
+                                  android:layout_height="48dp"
+                                  android:background="@drawable/bg_circle_gray">
+                                  <ImageView
+                                      android:layout_width="24dp"
+                                      android:layout_height="24dp"
+                                      android:src="@drawable/ic_warning_outline_orange" 
+                                      android:layout_gravity="center"
+                                      app:tint="@color/vigilant_red"
+                                      android:contentDescription="@null"/> 
+                              </FrameLayout>
+                              
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:layout_marginStart="16dp">
+                                  <TextView
+                                      android:id="@+id/tvRiskAppName"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/suspicious_app_name"
+                                      android:textStyle="bold"
+                                      android:textSize="16sp"
+                                      android:textColor="@color/black"/>
+                                  <TextView
+                                      android:id="@+id/tvRiskAppLabel"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:text="@string/high_risk_detected"
+                                      android:textSize="14sp"
+                                      android:textColor="@color/vigilant_red"/>
+                              </LinearLayout>
+                          </LinearLayout>
+                          
+                          <TextView
+                              android:id="@+id/tvRiskAppDescription"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="@string/suspicious_app_reason"
+                              android:textSize="14sp"
+                              android:textColor="@color/vigilant_text_secondary"
+                              android:layout_marginBottom="12dp"/>
+                              
+                          <TextView
+                              android:id="@+id/tvViewAnalysis"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="@string/view_analysis_action"
+                              android:textColor="@color/vigilant_blue"
+                              android:textStyle="bold"
+                              android:layout_gravity="end"
+                              android:background="?attr/selectableItemBackground"
+                              android:padding="4dp"/>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+             </LinearLayout>
+
+             <!-- SAFE/NORMAL ACTION GRID (Standard) -->
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_marginBottom="24dp">
+                 
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:layout_marginBottom="16dp">
+                     
+                     <!-- Card 1: Scan (If in Safe mode, this is promiment. If Risk, maybe hidden or kept) -->
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/cardRegularScans"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:minHeight="140dp"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="16dp"
+                         app:cardElevation="2dp"
+                         app:strokeWidth="0dp"
+                         app:cardBackgroundColor="@color/white"
+                         android:layout_marginEnd="8dp">
+                         
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical"
+                             android:padding="16dp"
+                             android:gravity="center">
+                             
+                             <FrameLayout
+                                 android:layout_width="48dp"
+                                 android:layout_height="48dp"
+                                 android:background="@drawable/bg_circle_light_purple"
+                                 android:backgroundTint="@color/vigilant_light_blue_bg"
+                                 android:layout_marginBottom="12dp">
+                                 <ImageView
+                                     android:layout_width="24dp"
+                                     android:layout_height="24dp"
+                                     android:src="@drawable/ic_shield_scan_white"
+                                     app:tint="@color/vigilant_blue"
+                                     android:layout_gravity="center"
+                                     android:contentDescription="@null"/>
+                             </FrameLayout>
+                             
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_scan_title"
+                                 android:textStyle="bold"
+                                 android:textSize="14sp"
+                                 android:gravity="center"
+                                 android:layout_marginBottom="4dp"/>
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_scan_desc"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_text_secondary"
+                                 android:gravity="center"/>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+    
+                     <!-- Card 2: Monitor -->
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/cardMonitorPermissions"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:minHeight="140dp"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="16dp"
+                         app:cardElevation="2dp"
+                         app:strokeWidth="0dp"
+                         app:cardBackgroundColor="@color/white"
+                         android:layout_marginStart="8dp">
+                         
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical"
+                             android:padding="16dp"
+                             android:gravity="center">
+                             
+                             <FrameLayout
+                                 android:layout_width="48dp"
+                                 android:layout_height="48dp"
+                                 android:background="@drawable/bg_circle_light_yellow"
+                                 android:backgroundTint="@color/vigilant_orange_bg_light"
+                                 android:layout_marginBottom="12dp">
+                                 <ImageView
+                                     android:layout_width="24dp"
+                                     android:layout_height="24dp"
+                                     android:src="@drawable/ic_eye_purple"
+                                     android:layout_gravity="center"
+                                     android:contentDescription="@null"/>
+                             </FrameLayout>
+                             
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_monitor_title"
+                                 android:textStyle="bold"
+                                 android:textSize="14sp"
+                                 android:gravity="center"
+                                 android:layout_marginBottom="4dp"/>
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_monitor_desc"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_text_secondary"
+                                 android:gravity="center"/>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal">
+                     
+                     <!-- Card 3: Community -->
+                      <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/cardCheckCommunity"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:minHeight="140dp"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="16dp"
+                         app:cardElevation="2dp"
+                         app:strokeWidth="0dp"
+                         app:cardBackgroundColor="@color/white"
+                         android:layout_marginEnd="8dp">
+                         
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical"
+                             android:padding="16dp"
+                             android:gravity="center">
+                             
+                             <FrameLayout
+                                 android:layout_width="48dp"
+                                 android:layout_height="48dp"
+                                 android:background="@drawable/bg_circle_light_purple"
+                                 android:backgroundTint="@color/vigilant_purple_bg_light"
+                                 android:layout_marginBottom="12dp">
+                                 <ImageView
+                                     android:layout_width="24dp"
+                                     android:layout_height="24dp"
+                                     android:src="@drawable/ic_community_card"
+                                     android:layout_gravity="center"
+                                     app:tint="@color/vigilant_purple"
+                                     android:contentDescription="@null"/>
+                             </FrameLayout>
+                             
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_community_title"
+                                 android:textStyle="bold"
+                                 android:textSize="14sp"
+                                 android:gravity="center"
+                                 android:layout_marginBottom="4dp"/>
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_community_desc"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_text_secondary"
+                                 android:gravity="center"/>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+    
+                     <!-- Card 4: Schedule -->
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/cardScheduledScan"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:minHeight="140dp"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="16dp"
+                         app:cardElevation="2dp"
+                         app:strokeWidth="0dp"
+                         app:cardBackgroundColor="@color/white"
+                         android:layout_marginStart="8dp">
+                         
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical"
+                             android:padding="16dp"
+                             android:gravity="center">
+                             
+                             <FrameLayout
+                                 android:layout_width="48dp"
+                                 android:layout_height="48dp"
+                                 android:background="@drawable/bg_circle_light_purple"
+                                 android:backgroundTint="@color/vigilant_blue_grey_bg_light"
+                                 android:layout_marginBottom="12dp">
+                                 <ImageView
+                                     android:layout_width="24dp"
+                                     android:layout_height="24dp"
+                                     android:src="@drawable/ic_schedule"
+                                     android:layout_gravity="center"
+                                     android:contentDescription="@null"/>
+                             </FrameLayout>
+                             
+                             <TextView
+                                 android:id="@+id/tvScheduleTitle"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_schedule_title"
+                                 android:textStyle="bold"
+                                 android:textSize="14sp"
+                                 android:gravity="center"
+                                 android:layout_marginBottom="4dp"/>
+                             <TextView
+                                 android:id="@+id/tvScheduleDesc"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="@string/card_schedule_desc"
+                                 android:textSize="12sp"
+                                 android:textColor="@color/vigilant_text_secondary"
+                                 android:gravity="center"/>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+                 </LinearLayout>
+             </LinearLayout>
+
+
+
+             <!-- Recent Alerts Container -->
+             <LinearLayout
+                 android:id="@+id/llRecentAlerts"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_marginTop="32dp">
+                 
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:layout_marginBottom="16dp"
+                     android:gravity="center_vertical">
+                     
+                     <TextView
+                         android:id="@+id/recent_alerts_title_view"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:text="@string/recent_alerts_title"
+                         android:textStyle="bold"
+                         android:textSize="18sp"
+                         android:textColor="@color/black"/>
+                     
+                     <TextView
+                         android:id="@+id/tvViewAllAlerts"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/view_all_action"
+                         android:textColor="@color/vigilant_blue"
+                         android:textStyle="bold"
+                         android:background="?attr/selectableItemBackground"
+                         android:padding="@dimen/padding_small"
+                         android:clickable="true"
+                         android:focusable="true"/>
+                 </LinearLayout>
+                 
+                 <!-- Alert Card 1 -->
+                  <com.google.android.material.card.MaterialCardView
+                      android:id="@+id/cardAlert1"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      app:cardCornerRadius="12dp"
+                      app:cardElevation="2dp"
+                      app:strokeWidth="0dp"
+                      app:cardBackgroundColor="@color/white"
+                      android:layout_marginBottom="12dp"
+                      android:visibility="gone">
+                      
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
+                          
+                          <View
+                              android:id="@+id/alert1Border"
+                              android:layout_width="6dp"
+                              android:layout_height="match_parent"
+                              android:background="@color/vigilant_red"/>
+                          
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+                              
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginBottom="4dp">
+                                  <TextView
+                                      android:id="@+id/tvAlert1Title"
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:text="Alert Title"
+                                      android:textStyle="bold"
+                                      android:textColor="@color/black"/>
+                                  <TextView
+                                      android:id="@+id/tvAlert1Time"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:text="Just now"
+                                      android:textSize="12sp"
+                                      android:textColor="@color/vigilant_text_secondary"/>
+                              </LinearLayout>
+                              
+                              <TextView
+                                  android:id="@+id/tvAlert1Desc"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Alert Description"
+                                  android:textSize="14sp"
+                                  android:textColor="@color/vigilant_text_secondary"/>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+                  
+                  <!-- Alert Card 2 -->
+                  <com.google.android.material.card.MaterialCardView
+                      android:id="@+id/cardAlert2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      app:cardCornerRadius="12dp"
+                      app:cardElevation="2dp"
+                      app:strokeWidth="0dp"
+                      app:cardBackgroundColor="@color/white"
+                      android:layout_marginBottom="12dp"
+                      android:visibility="gone">
+                      <!-- Similar structure -->
+                        <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
+                          
+                          <View
+                              android:id="@+id/alert2Border"
+                              android:layout_width="6dp"
+                              android:layout_height="match_parent"
+                              android:background="@color/vigilant_red"/>
+                          
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+                              
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginBottom="4dp">
+                                  <TextView
+                                      android:id="@+id/tvAlert2Title"
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:text="Alert Title"
+                                      android:textStyle="bold"
+                                      android:textColor="@color/black"/>
+                                  <TextView
+                                      android:id="@+id/tvAlert2Time"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:text="Just now"
+                                      android:textSize="12sp"
+                                      android:textColor="@color/vigilant_text_secondary"/>
+                              </LinearLayout>
+                              
+                              <TextView
+                                  android:id="@+id/tvAlert2Desc"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Alert Description"
+                                  android:textSize="14sp"
+                                  android:textColor="@color/vigilant_text_secondary"/>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+
+             </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/vigilant_nav_item_color" 
+        app:itemTextColor="@color/vigilant_nav_text_color"
+        app:labelVisibilityMode="labeled"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

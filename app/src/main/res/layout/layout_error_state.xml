@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/padding_xl">
+
+    <ImageView
+        android:layout_width="@dimen/icon_size_xxl"
+        android:layout_height="@dimen/icon_size_xxl"
+        android:src="@drawable/ic_warning_amber"
+        android:layout_marginBottom="@dimen/margin_medium"/>
+
+    <TextView
+        android:id="@+id/tvErrorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Something went wrong"
+        android:textAppearance="@style/TextAppearance.Vigilant.Heading"
+        android:layout_marginBottom="@dimen/margin_small"/>
+
+    <TextView
+        android:id="@+id/tvErrorDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please try again"
+        android:textAppearance="@style/TextAppearance.Vigilant.Body"
+        android:layout_marginBottom="@dimen/margin_large"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:text="Retry"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Vigilant.Button.Pill"/>
+</LinearLayout>
